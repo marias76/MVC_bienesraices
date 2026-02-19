@@ -1,0 +1,28 @@
+{
+    "name": "marias/mvc-bienes-raices",
+    "description": "Proyecto MVC para gestión de bienes raíces en PHP",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Arias",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "vlucas/phpdotenv": "^5.6",
+        "intervention/image": "^3.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Model\\": "models/",
+            "MVC\\": "./",
+            "Controllers\\": "./controllers"
+        },
+        "files": [
+            "includes/funciones.php"
+        ]
+    }
+}

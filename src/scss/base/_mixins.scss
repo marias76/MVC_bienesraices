@@ -1,0 +1,51 @@
+/** Media Queries **/
+@mixin telefono {
+    @media (min-width: #{$telefono}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+  
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+@mixin boton($bg-color: $amarillo, $display: inline-block) {
+    background-color: $bg-color;
+    color: $blanco;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    margin-top: $separacion /2;
+    cursor: pointer;
+    transition: .3s ease all;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    display: $display;
+    -webkit-transition: .3s ease all;
+    -moz-transition: .3s ease all;
+    -ms-transition: .3s ease all;
+    -o-transition: .3s ease all;
+    &:hover {
+        background-color: darken($bg-color, 10%);
+        text-decoration: none;
+        color: $blanco;
+    }
+}

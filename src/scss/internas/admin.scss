@@ -1,0 +1,53 @@
+.alerta {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+    //margin-bottom: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    // margin: 1rem 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+    &.error {
+        background-color: #f2dede;
+        color: #a94442;
+        border-color: #ebccd1;
+    }
+
+    &.exito {
+        background-color: #dff0d8;
+        color: #3c763d;
+        border-color: #d6e9c6;
+    }           
+}
+
+table.propiedades {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    border-spacing: 0;
+
+    thead {
+        background-color: #f8f8f8;
+    }
+
+    th, td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .imagen-tabla {
+        width: 20rem;
+        height: auto;
+    }
+}   
+
+.imagen-small {
+    display: block;
+    width: 40rem;
+    height: auto;
+    margin: 1rem auto;
+}       
+

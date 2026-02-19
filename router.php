@@ -7,14 +7,15 @@ class router{
     {
         $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
-        $rutas = $this->rutasGET;
 
-        if ($metodo === 'POST') {
+        if ($metodo === 'GET') {
+            $rutas = $this->rutasGET;
+        } else {
             $rutas = $this->rutasPOST;
         }
 
         foreach ($rutas as $ruta => $funcion) {
-            if ($ruta === $urlActual && $metodo === 'GET') {
+            if ($ruta === $urlActual) {
                 call_user_func($funcion, $this);
                 return;
             }

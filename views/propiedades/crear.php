@@ -1,6 +1,11 @@
 <main class="contenedor seccion">
     <h1>Crear</h1>
-    <form class="formulario" method="post" action="">
+
+    <?php foreach ($errores as $error): ?>
+        <div class="alerta error"><?php echo $error; ?></div>
+    <?php endforeach; ?>
+    
+    <form class="formulario" method="post" action="" enctype="multipart/form-data">
         <?php
           include __DIR__ . '/formulario.php';  
         ?>

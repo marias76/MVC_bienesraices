@@ -3,8 +3,8 @@
  * formulario_propiedades.php
  * Formulario para crear/actualizar propiedades
  *
- * @var \App\Propiedad   $propiedad   Instancia de Propiedad que se está creando o editando
- * @var \App\Vendedor[]  $vendedores  Array de objetos Vendedor disponibles para asignar
+ * @var \Model\Propiedad   $propiedad   Instancia de Propiedad que se está creando o editando
+ * @var \Model\Vendedor[]  $vendedores  Array de objetos Vendedor disponibles para asignar
  */
 ?>
 
@@ -47,10 +47,10 @@
         <option selected value="">-- Seleccione --</option>
         <?php foreach ($vendedores as $vendedor): ?>
             <option 
-                value="<?php echo s($vendedor->id); { ?>"
+                value="<?php echo s($vendedor->id); ?>"
                 <?php echo ((int)$propiedad->vendedor_id === (int)$vendedor->id) ? 'selected' : ''; ?>>
                 <?php echo s($vendedor->nombre . " " . $vendedor->apellidos); ?>
             </option>
-        <?php } endforeach; ?>
+        <?php endforeach; ?>
     </select>
 </fieldset>

@@ -13,8 +13,12 @@ class PropiedadController {
         ]);  
         
     }
-    public static function crear() {
-        echo "crear propiedad";
+    public static function crear(router $router) {
+        // echo "crear propiedad";
+            $router->render('propiedades/crear', [
+                'propiedad' => new Propiedad()
+
+            ]);
     }   
 
     public static function actualizar() {

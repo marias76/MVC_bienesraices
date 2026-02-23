@@ -44,9 +44,29 @@ function mostrarNotificacion($codigo){
         case 3:
             $mensaje = 'Eliminado Correctamente';
             break;
+        case 4:
+            $mensaje = 'No se puede eliminar: el vendedor tiene propiedades asociadas';
+            break;
         default:
             $mensaje = false;
             break;
     }
     return $mensaje;
+}
+
+function validarORedireccionar($url) {
+    // validar la URL por ID válido
+            $id = $_GET['id'] ?? null;  
+            $id = filter_var($id, FILTER_VALIDATE_INT); 
+            if (!$id) {
+                header("Location: $url");
+                exit;
+            }   
+            return $id;
+}
+
+function validarTipoContenido($tipo): bool
+{
+    $tipos = ['propiedad', 'vendedor'];
+    return in_array($tipo, $tipos, true);
 }

@@ -10,16 +10,18 @@ namespace Model;
  * @property string $nombre
  * @property string $apellidos
  * @property string $telefono
+ * @property string $descripcion
  */
 class Vendedor extends ActiveRecord
 {
     protected static $tabla = 'vendedores';
-    protected static $columnasDB = ['id', 'nombre', 'apellidos', 'telefono'];
+     protected static $columnasDB = ['id', 'nombre', 'apellidos', 'telefono', 'descripcion'];
 
     public $id;
     public $nombre;
     public $apellidos;
     public $telefono;
+    public $descripcion;
 
     public function __construct($args = [])
     {
@@ -27,6 +29,7 @@ class Vendedor extends ActiveRecord
         $this->nombre    = $args['nombre'] ?? '';
         $this->apellidos = $args['apellidos'] ?? '';
         $this->telefono  = $args['telefono'] ?? '';
+        $this->descripcion = $args['descripcion'] ?? '';
     }
 
     public function validar()

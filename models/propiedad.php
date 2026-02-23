@@ -36,6 +36,19 @@ class Propiedad extends ActiveRecord
     public $creado;
     public $vendedor_id;
 
+    public static function fechaActual(): string
+    {
+        $timezone = $_ENV['APP_TIMEZONE'] ?? date_default_timezone_get();
+
+        try {
+            $zonaHoraria = new \DateTimeZone($timezone);
+        } catch (\Exception $e) {
+            $zonaHoraria = new \DateTimeZone('UTC');
+        }
+
+        return (new \DateTime('now', $zonaHoraria))->format('Y-m-d H:i:s');
+    }
+
     public function __construct($args = [])
     {
         $this->id = $args['id'] ?? null;
@@ -47,9 +60,7 @@ class Propiedad extends ActiveRecord
         $this->wc = $args['wc'] ?? null;
         $this->estacionamiento = $args['estacionamiento'] ?? null;
 
-        // Definir zona horaria correctamente con el namespace global
-        $zonaHoraria = new \DateTimeZone('America/Lima'); // UTC-5
-        $this->creado = (new \DateTime('now', $zonaHoraria))->format('Y-m-d H:i:s');
+        $this->creado = $args['creado'] ?? self::fechaActual();
 
         $this->vendedor_id = $args['vendedor_id'] ?? null;
     }

@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS vendedores (
   nombre VARCHAR(60) NOT NULL,
   apellidos VARCHAR(80) NOT NULL,
   telefono VARCHAR(20) NOT NULL,
+  descripcion TEXT NULL,
   INDEX idx_vendedores_nombre (nombre)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

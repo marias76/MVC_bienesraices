@@ -5,8 +5,13 @@ class router{
     public $rutasPOST = []; 
     public function comprobarRutas()
     {
-        $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
-        $metodo = $_SERVER['REQUEST_METHOD'];
+        $urlActual = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/';
+        $urlActual = rtrim($urlActual, '/');
+        if ($urlActual === '') {
+            $urlActual = '/';
+        }
+
+        $metodo = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
         if ($metodo === 'GET') {
             $rutas = $this->rutasGET;
@@ -20,7 +25,7 @@ class router{
                 return;
             }
         }
-        // Si no se encuentra la ruta, puedes mostrar una página de error o redirigir a una página predeterminada
+        http_response_code(404);
         echo "Página no encontrada";
     }
     public function get($ruta, $funcion)

@@ -1,3 +1,7 @@
+<!-- Página principal del layout, se muestra en todas las vistas, 
+ el contenido de cada vista se inyecta en la variable $contenido, 
+ que se muestra en el layout.php -->
+
 <?php
 // Determinar si es la página de inicio
 if (session_status() === PHP_SESSION_NONE) {
@@ -10,7 +14,6 @@ $auth = $_SESSION['login'] ?? false;
 
  }
 ?>  
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -27,7 +30,7 @@ $auth = $_SESSION['login'] ?? false;
     <header class="header <?php echo $inicio ? 'inicio' : ''; ?>">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="/">
+                <a href="/admin">
                     <img class="logo-principal" src="/build/img/logo.svg" alt="logotipo de bienes raíces">
                 </a>
            <div class="mobile-menu">
@@ -51,9 +54,12 @@ $auth = $_SESSION['login'] ?? false;
             <?php echo $inicio ? "<h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>" : ""; ?>  
         </div>
     </header>
-    
+
+    <!-- muestra el contenido de cada vista, que se inyecta en el layout.php a través 
+     del método render del router.php -->
     <?php echo $contenido; ?>
 
+    <!-- footer -->
     <footer class="footer seccion">
     <div class="contenedor contenedor-footer">
         <nav class="navegacion">

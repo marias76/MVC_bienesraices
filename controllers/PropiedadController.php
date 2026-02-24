@@ -1,13 +1,13 @@
 <?php
 namespace Controllers;
-use MVC\router;
+use MVC\Router;
 use Model\Propiedad;
 use Model\Vendedor;
 use Intervention\Image\ImageManager as Image;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Exceptions\DriverException;
 class PropiedadController {
-    public static function index(router $router) {
+    public static function index(Router $router) {
 
         // trae todas las propiedades de la base de datos
         $propiedades = Propiedad::all();
@@ -23,7 +23,7 @@ class PropiedadController {
         ]);  
         
     }
-    public static function crear(router $router) {
+    public static function crear(Router $router) {
         $propiedad = new Propiedad();
         $vendedores = Vendedor::all();
         $imagen = null;
@@ -81,7 +81,7 @@ class PropiedadController {
         ]);
     }   
 
-    public static function actualizar(router $router) {
+    public static function actualizar(Router $router) {
         $id = validarORedireccionar('/admin');
         $propiedad = Propiedad::find($id);
         if (!$propiedad instanceof Propiedad) {

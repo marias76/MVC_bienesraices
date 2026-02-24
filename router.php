@@ -1,6 +1,6 @@
 <?php
 namespace MVC;
-class router{
+class Router{
     public $rutasGET = []; 
     public $rutasPOST = []; 
     public function comprobarRutas()

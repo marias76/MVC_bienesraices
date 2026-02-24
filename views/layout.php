@@ -30,7 +30,7 @@ $auth = $_SESSION['login'] ?? false;
     <header class="header <?php echo $inicio ? 'inicio' : ''; ?>">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="/admin">
+                <a href="./">
                     <img class="logo-principal" src="/build/img/logo.svg" alt="logotipo de bienes raíces">
                 </a>
            <div class="mobile-menu">

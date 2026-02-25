@@ -1,5 +1,6 @@
 .dark-mode {
     background-color: darken($grisOscuro, 10);
+    color: $blanco;
 
     p {
         color: $blanco;
@@ -37,6 +38,10 @@
     table.propiedades {
         thead {
             background-color: darken($grisOscuro, 5);
+        }
+
+        tbody {
+            color: $blanco;
         }
 
         th,

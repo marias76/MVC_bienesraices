@@ -1,3 +1,4 @@
+<!-- Página principal del proyecto -->
 <?php
 require_once __DIR__ . '/../includes/app.php';
 use MVC\Router;
@@ -23,6 +24,7 @@ use MVC\Router;
  //zona pública
  $router->get('/', [PaginasControllers::class, 'index']);
  $router->get('/nosotros', [PaginasControllers::class, 'nosotros']);
+ $router->get('/anuncios', [PaginasControllers::class, 'propiedades']);
  $router->get('/propiedades', [PaginasControllers::class, 'propiedades']);
  $router->get('/propiedad', [PaginasControllers::class, 'propiedad']);
  $router->get('/blog', [PaginasControllers::class, 'blog']);

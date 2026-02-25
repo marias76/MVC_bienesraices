@@ -30,7 +30,7 @@ $auth = $_SESSION['login'] ?? false;
     <header class="header <?php echo $inicio ? 'inicio' : ''; ?>">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="./">
+                <a href="/">
                     <img class="logo-principal" src="/build/img/logo.svg" alt="logotipo de bienes raíces">
                 </a>
            <div class="mobile-menu">
@@ -40,12 +40,12 @@ $auth = $_SESSION['login'] ?? false;
                 <div class="derecha">
                     <img src="/build/img/dark-mode.svg" alt="icono dark mode" class="dark-mode-boton">
                     <nav class="navegacion">
-                        <a href="nosotros.php">Nosotros</a>
-                        <a href="anuncios.php">Anuncios</a>
-                        <a href="blog.php">Blog</a>
-                        <a href="contacto.php">Contacto</a>
+                        <a href="/nosotros">Nosotros</a>
+                        <a href="/anuncios">Anuncios</a>
+                        <a href="/blog">Blog</a>
+                        <a href="/contacto">Contacto</a>
                         <?php if ($auth): ?>
-                            <a href="/cerrar-sesion.php">Cerrar Sesión</a>
+                            <a href="/cerrar-sesion">Cerrar Sesión</a>
                         <?php endif; ?>
                     </nav>
                 </div>
@@ -58,15 +58,14 @@ $auth = $_SESSION['login'] ?? false;
     <!-- muestra el contenido de cada vista, que se inyecta en el layout.php a través 
      del método render del router.php -->
     <?php echo $contenido; ?>
-
     <!-- footer -->
     <footer class="footer seccion">
     <div class="contenedor contenedor-footer">
         <nav class="navegacion">
-            <a href="nosotros.php">Nosotros</a>
-            <a href="anuncios.php">Anuncios</a>
-            <a href="blog.php">Blog</a>
-            <a href="contacto.php">Contacto</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/anuncios">Anuncios</a>
+            <a href="/blog">Blog</a>
+            <a href="/contacto">Contacto</a>
         </nav>
     </div>
 

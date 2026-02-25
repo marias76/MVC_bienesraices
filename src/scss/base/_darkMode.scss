@@ -34,6 +34,18 @@
 
     }
 
+    table.propiedades {
+        thead {
+            background-color: darken($grisOscuro, 5);
+        }
+
+        th,
+        td {
+            color: $blanco;
+            border-bottom: 1px solid lighten($grisOscuro, 10);
+        }
+    }
+
     .formulario {
         color: $blanco;
     }
@@ -44,6 +56,7 @@
         legend,
         p {
             color: $gris;
+            background-color: transparent;
         }
 
         input:not([type="submit"]),
@@ -52,6 +65,34 @@
             background-color: $grisOscuro;
             border: 1px solid $grisOscuro;
             color: $blanco;
+
+            &::placeholder {
+                color: darken($gris, 15);
+            }
+
+            &:focus {
+                border: 1px solid $verde;
+                outline: none;
+            }
+        }
+
+        select option {
+            background-color: $grisOscuro;
+            color: $blanco;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+            -webkit-text-fill-color: $blanco;
+            -webkit-box-shadow: 0 0 0px 1000px $grisOscuro inset;
+            transition: background-color 5000s ease-in-out 0s;
         }
     }
 

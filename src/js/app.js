@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initDarkMode();
     initMobileMenu();
+    eventListeners();
 });
 
 function initDarkMode() {
@@ -43,4 +44,37 @@ function initMobileMenu() {
             navegacion.classList.toggle('mostrar');
         });
     }
+}
+function eventListeners() {
+    document.addEventListener('change', function(event) {
+        if(event.target.matches('input[name="contacto[contacto]"]')) {
+            mostrarMetodosContacto(event);
+        }
+    });
+
+}
+function mostrarMetodosContacto(event) {
+    const contactoDiv = document.querySelector('#contacto');
+    if(event.target.value === 'telefono') {
+        contactoDiv.innerHTML = `        
+        <p><span>Ingrese su Teléfono: </span></p>
+        <input type="tel" id="telefono" name="contacto[telefono]" placeholder="Tu Teléfono" required>
+
+        <p><span>Elija la fecha y la Hora para la llamada:</span></p>
+            <div id="contacto-telefono" class="contacto-informacion">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="contacto[fecha]" required>
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="contacto[hora]" min="09:00" max="18:00" required>
+            </div>`;
+    }
+    else if(event.target.value === 'email') {
+        contactoDiv.innerHTML = `
+        <p><span>Ingrese su E-mail: </span></p>
+        <div id="contacto-email" class="contacto-informacion">
+                <label for="email-preferencia">E-mail:</label>
+                <input type="email" id="email-preferencia" name="contacto[email-preferencia]" placeholder="Tu E-mail" required>
+        </div>`;
+    }
+
 }

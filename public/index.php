@@ -1,10 +1,11 @@
 <!-- Página principal del proyecto -->
 <?php
 require_once __DIR__ . '/../includes/app.php';
+use Controllers\LoginControllers;
+use Controllers\PaginasControllers;
+use Controllers\PropiedadController;
+use Controllers\VendedorController;
 use MVC\Router;
- use Controllers\PropiedadController;
- use Controllers\VendedorController;
- use Controllers\PaginasControllers;
 
  $router = new Router(); 
 //zona privada
@@ -32,5 +33,9 @@ use MVC\Router;
  $router->get('/contacto', [PaginasControllers::class, 'contacto']);
  $router->post('/contacto', [PaginasControllers::class, 'contacto']);
 
+// zona login y logout
+$router->get('/login', [LoginControllers::class, 'login']);
+$router->post('/login', [LoginControllers::class, 'login']);
+$router->get('/logout', [LoginControllers::class, 'logout']);    
+    
  $router->comprobarRutas();
-

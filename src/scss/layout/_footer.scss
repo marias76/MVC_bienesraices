@@ -1,9 +1,12 @@
+@use 'sass:math';
+@use '../base/variables' as *;
+
 .footer {
-    padding: $separacion/2 0;
+    padding: math.div($separacion, 2) 0;
     background-color: $grisOscuro;
 
     .contenedor-footer {
-        padding-top: $separacion/2;
+        padding-top: math.div($separacion, 2);
     }
 
     .navegacion {

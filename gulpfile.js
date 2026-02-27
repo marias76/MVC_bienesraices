@@ -24,7 +24,7 @@ const paths = {
 function css() {
     return src(paths.scss)
         .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({ silenceDeprecations: ['legacy-js-api'] }).on('error', sass.logError))
         .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(sourcemaps.write('.'))
         .pipe(dest('./public/build/css'))

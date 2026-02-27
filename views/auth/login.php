@@ -13,10 +13,10 @@
             <legend>Correo y Contraseña</legend>
 
             <label for="email">Correo Electrónico</label>
-            <input type="email" name="email" placeholder="Tú Correo" id="email" required>
+            <input type="email" name="email" placeholder="Tú Correo" id="email">
 
             <label for="password">Contraseña</label>
-            <input type="password" name="password" placeholder="Tú Contraseña" id="password" required>
+            <input type="password" name="password" placeholder="Tú Contraseña" id="password">
         </fieldset>
 
         <input type="submit" value="Iniciar Sesión" class="boton boton-verde u-center-block">

@@ -1,5 +1,8 @@
+@use 'sass:color';
+@use './variables' as *;
+
 .dark-mode {
-    background-color: darken($grisOscuro, 10);
+    background-color: color.adjust($grisOscuro, $lightness: -10%);
     color: $blanco;
 
     p {
@@ -37,7 +40,7 @@
 
     table.propiedades {
         thead {
-            background-color: darken($grisOscuro, 5);
+            background-color: color.adjust($grisOscuro, $lightness: -5%);
         }
 
         tbody {
@@ -47,7 +50,7 @@
         th,
         td {
             color: $blanco;
-            border-bottom: 1px solid lighten($grisOscuro, 10);
+            border-bottom: 1px solid color.adjust($grisOscuro, $lightness: 10%);
         }
     }
 
@@ -72,7 +75,7 @@
             color: $blanco;
 
             &::placeholder {
-                color: darken($gris, 15);
+                color: color.adjust($gris, $lightness: -15%);
             }
 
             &:focus {

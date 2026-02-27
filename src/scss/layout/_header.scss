@@ -1,3 +1,6 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
 .no-webp .inicio {
   background-image: url("/build/img/header.jpg");
   background-position: center;

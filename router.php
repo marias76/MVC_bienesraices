@@ -5,6 +5,12 @@ class Router{
     public $rutasPOST = []; 
     public function comprobarRutas()
     {
+        session_start();
+        $auth = $_SESSION['login'] ?? null;
+    
+        //arreglo de rutas protegidas
+        $rutas_protegidas = ['/admin', '/propiedades/crear', '/propiedades/actualizar', '/propiedades/eliminar', '/vendedores/crear', '/vendedores/actualizar', '/vendedores/eliminar'];
+
         $urlActual = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/';
         $urlActual = rtrim($urlActual, '/');
         if ($urlActual === '') {
@@ -17,6 +23,12 @@ class Router{
             $rutas = $this->rutasGET;
         } else {
             $rutas = $this->rutasPOST;
+        }
+
+        // Verificar si la ruta actual está protegida
+        if (in_array($urlActual, $rutas_protegidas) && !$auth) {
+            header('Location: /');
+            return;
         }
 
         foreach ($rutas as $ruta => $funcion) {
